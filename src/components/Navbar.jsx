@@ -20,24 +20,27 @@ export const NavBar = () => {
   };
 
   return (
-    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+    <Navbar
+      expand="md"
+      variant="dark"
+      className={scrolled ? "scrolled navbar" : "navbar"}
+    >
       <Container>
-        <Navbar.Brand href="/" />
+        <Navbar.Brand href="/" className="logo">
+          MyPortfolio
+        </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {["home", "about", "skills", "projects"].map((item) => (
               <Nav.Link
                 key={item}
-                href={`#${item}`}
+                as={HashLink}
+                to={`#${item}`}
                 className={
-                  activeLink === item
-                    ? "active navbar-link"
-                    : "navbar-link"
+                  activeLink === item ? "active navbar-link" : "navbar-link"
                 }
                 onClick={() => onUpdateActiveLink(item)}
               >

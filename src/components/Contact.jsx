@@ -7,7 +7,6 @@ import "../styles/App.css";
 import bgImg from "../assets/img/bg-1.png";
 
 export const Contact = () => {
-
   const formInitialDetails = {
     firstName: "",
     lastName: "",
@@ -40,14 +39,11 @@ export const Contact = () => {
       <Container>
         <Row className="justify-content-center">
           <Col md={7} data-aos="fade-up">
-
             <div className="contact-box">
-
               <h2 className="contact-title">Contact Me</h2>
 
               <form>
                 <Row>
-
                   <Col sm={6}>
                     <input type="text" placeholder="First Name" />
                   </Col>
@@ -69,12 +65,9 @@ export const Contact = () => {
 
                     <button type="submit">Send Message</button>
                   </Col>
-
                 </Row>
               </form>
-
             </div>
-
           </Col>
         </Row>
       </Container>

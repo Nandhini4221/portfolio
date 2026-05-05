@@ -17,25 +17,27 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
 
-  // Typing Effect
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const i = loopNum % roles.length;
-      const fullText = roles[i];
+    const timer = setTimeout(
+      () => {
+        const i = loopNum % roles.length;
+        const fullText = roles[i];
 
-      setText(
-        isDeleting
-          ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
-      );
+        setText(
+          isDeleting
+            ? fullText.substring(0, text.length - 1)
+            : fullText.substring(0, text.length + 1),
+        );
 
-      if (!isDeleting && text === fullText) {
-        setTimeout(() => setIsDeleting(true), 1000);
-      } else if (isDeleting && text === "") {
-        setIsDeleting(false);
-        setLoopNum(loopNum + 1);
-      }
-    }, isDeleting ? 40 : 80);
+        if (!isDeleting && text === fullText) {
+          setTimeout(() => setIsDeleting(true), 1000);
+        } else if (isDeleting && text === "") {
+          setIsDeleting(false);
+          setLoopNum(loopNum + 1);
+        }
+      },
+      isDeleting ? 40 : 80,
+    );
 
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum]);
@@ -60,21 +62,38 @@ export const Banner = () => {
       <Container>
         <Row>
           <Col md={7}>
-           
             <div className="social-icons" data-aos="fade-down">
-              <a href="https://www.linkedin.com/in/nandhini-sitharthan-8a4158293" target="_blank" rel="noreferrer" className="icon linkedin">
+              <a
+                href="https://www.linkedin.com/in/nandhini-sitharthan-8a4158293"
+                target="_blank"
+                rel="noreferrer"
+                className="icon linkedin"
+              >
                 <FaLinkedinIn />
               </a>
 
-              <a href="https://www.instagram.com/_choco.daze_" target="_blank" rel="noreferrer" className="icon instagram">
+              <a
+                href="https://www.instagram.com/_choco.daze_"
+                target="_blank"
+                rel="noreferrer"
+                className="icon instagram"
+              >
                 <FaInstagram />
               </a>
 
-              <a href="https://github.com/Nandhini4221" target="_blank" rel="noreferrer" className="icon github">
+              <a
+                href="https://github.com/Nandhini4221"
+                target="_blank"
+                rel="noreferrer"
+                className="icon github"
+              >
                 <FaGithub />
               </a>
 
-              <a href="mailto:nandhinisitharthan07@gmail.com" className="icon mail">
+              <a
+                href="mailto:nandhinisitharthan07@gmail.com"
+                className="icon mail"
+              >
                 <MdEmail />
               </a>
             </div>
@@ -86,7 +105,8 @@ export const Banner = () => {
             </h1>
 
             <p data-aos="fade-up">
-              I build scalable and user-friendly web applications with clean code.
+              I build scalable and user-friendly web applications with clean
+              code.
             </p>
 
             <div className="btn-group" data-aos="zoom-in">

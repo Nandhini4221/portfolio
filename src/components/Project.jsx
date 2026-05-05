@@ -13,7 +13,7 @@ export const Projects = () => {
       image: project1,
       tags: ["React", "Node", "Express", "MongoDB"],
       github: "https://github.com/Nandhini4221",
-      demo: "https://your-ecommerce-demo.netlify.app",
+      demo: "hiii",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const Projects = () => {
       image: project2,
       tags: ["React", "CSS", "Animations"],
       github: "https://github.com/Nandhini4221",
-      demo: "https://your-portfolio-demo.netlify.app",
+      demo: "https://nandysportfolio.vercel.app/",
     },
     {
       id: 3,
@@ -40,16 +40,21 @@ export const Projects = () => {
   return (
     <section className="projects-section" id="projects">
       <div className="container">
-
-        <div className="projects-title">
-          <h2>My <span>Projects</span></h2>
+        <div className="projects-title" data-aos="fade-up">
+          <h2>
+            My <span>Projects</span>
+          </h2>
           <p>A showcase of my recent work</p>
         </div>
 
         <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
-
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className="project-card"
+              data-aos="zoom-in"
+              data-aos-delay={index * 150}
+            >
               <div className="project-img">
                 <img src={project.image} alt={project.title} />
               </div>
@@ -65,28 +70,41 @@ export const Projects = () => {
                 </div>
 
                 <div className="btn-group">
-                  <a href={project.github} target="_blank" rel="noreferrer" className="btn code">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn code"
+                  >
                     <FaGithub /> Code
                   </a>
 
                   {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noreferrer" className="btn demo">
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn demo"
+                    >
                       <FaExternalLinkAlt /> Demo
                     </a>
                   )}
                 </div>
-
               </div>
             </div>
           ))}
         </div>
 
-        <div className="view-all">
-          <a href={allProjects} target="_blank" rel="noreferrer" className="view-btn">
+        <div className="view-all" data-aos="fade-up" data-aos-delay="300">
+          <a
+            href={allProjects}
+            target="_blank"
+            rel="noreferrer"
+            className="view-btn"
+          >
             <FaGithub /> View All Projects <FaExternalLinkAlt />
           </a>
         </div>
-
       </div>
     </section>
   );
