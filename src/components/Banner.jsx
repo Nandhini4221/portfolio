@@ -6,6 +6,7 @@ import { MdEmail } from "react-icons/md";
 import bgImg from "../assets/img/me7.png";
 import resume from "../assets/Resume/Nandhinis-Resume.pdf";
 import "../styles/App.css";
+import { toast } from "react-toastify";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -110,7 +111,8 @@ export const Banner = () => {
             </p>
 
             <div className="btn-group" data-aos="zoom-in">
-              <a href={resume} download className="btn-outline">
+              <a href={resume} download  className="btn-outline"
+              onClick={()=>toast.success('CV Downloaded Successfully')}>
                 Download CV
               </a>
 

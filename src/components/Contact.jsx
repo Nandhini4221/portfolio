@@ -1,23 +1,35 @@
-import { useState, useEffect } from "react";
+import { useEffect,useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/App.css";
-
+import emailjs from "@emailjs/browser"
+import { toast } from "react-toastify";
 import bgImg from "../assets/img/bg-1.png";
 
 export const Contact = () => {
-  const formInitialDetails = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  };
+  const Details = useRef()
 
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
+    const sendEmail = (e) => {
+        e.preventDefault()
+
+        emailjs.sendForm(
+            'service_nandy78',     // your service id
+            'template_nandy78',    // your template id
+            form.current,
+            'WkqlapeAlSo1mmODO'       // your public key
+        )
+            .then(() => {
+                toast.success('Message sent successfully 🚀')
+                form.current.reset()
+            })
+            .catch((err) => {
+                console.log(err)
+                toast.error('Failed to send ❌')
+            })
+    }
+
+
 
   useEffect(() => {
     AOS.init({ duration: 900, once: true });
@@ -42,7 +54,7 @@ export const Contact = () => {
             <div className="contact-box">
               <h2 className="contact-title">Contact Me</h2>
 
-              <form>
+              <form ref={Details} onSubmit={sendEmail}>
                 <Row>
                   <Col sm={6}>
                     <input type="text" placeholder="First Name" />
