@@ -103,6 +103,7 @@ nav.navbar.scrolled {
   backdrop-filter: blur(10px);
 }
 
+
 .navbar-link {
   color: #fff !important;
   padding: 0 20px;
@@ -110,6 +111,7 @@ nav.navbar.scrolled {
   opacity: 0.7;
   transition: 0.3s;
   font-family: cursive;
+  cursor: pointer;
 }
 
 .navbar-link:hover,
@@ -118,7 +120,7 @@ nav.navbar.scrolled {
 }
 
 .ms-auto {
-  gap: 30px;
+  gap: 10px;
 }
 
 .btn-nav {
@@ -128,6 +130,7 @@ nav.navbar.scrolled {
   color: #fff;
   font-weight: 600;
   transition: 0.3s;
+  margin-top: 10px;
   border-radius: 30px;
   font-family: cursive;
 }
@@ -137,14 +140,16 @@ nav.navbar.scrolled {
   color: #000;
 }
 
+
+
 .navbar-toggler {
   border: 1px solid rgba(138, 37, 206, 0.5) !important;
 }
 
 .navbar-toggler-icon {
-  filter: invert(1);
   width: 1.5em;
   height: 1.5em;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
 @media (max-width: 768px) {

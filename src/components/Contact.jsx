@@ -1,46 +1,39 @@
-import { useEffect,useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/App.css";
-import emailjs from "@emailjs/browser"
+import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+
 import bgImg from "../assets/img/bg-1.png";
 
 export const Contact = () => {
-  const Details = useRef()
+  const form = useRef();
 
-    const sendEmail = (e) => {
-        e.preventDefault()
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-        emailjs.sendForm(
-            'service_nandy78',     // your service id
-            'template_nandy78',    // your template id
-            form.current,
-            'WkqlapeAlSo1mmODO'       // your public key
-        )
-            .then(() => {
-                toast.success('Message sent successfully 🚀')
-                form.current.reset()
-            })
-            .catch((err) => {
-                console.log(err)
-                toast.error('Failed to send ❌')
-            })
-    }
-
-
+    emailjs
+      .sendForm(
+        "service_nandy78", // service id
+        "template_nandy78", // template id
+        form.current,
+        "WkqlapeAlSo1mmODO" // public key
+      )
+      .then(() => {
+        toast.success("Message sent successfully 🚀");
+        form.current.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Failed to send ❌");
+      });
+  };
 
   useEffect(() => {
     AOS.init({ duration: 900, once: true });
   }, []);
-
-  const onFormUpdate = (category, value) => {
-    setFormDetails({
-      ...formDetails,
-      [category]: value,
-    });
-  };
 
   return (
     <section
@@ -54,26 +47,49 @@ export const Contact = () => {
             <div className="contact-box">
               <h2 className="contact-title">Contact Me</h2>
 
-              <form ref={Details} onSubmit={sendEmail}>
+              <form ref={form} onSubmit={sendEmail}>
                 <Row>
                   <Col sm={6}>
-                    <input type="text" placeholder="First Name" />
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      name="first_name"
+                      required
+                    />
                   </Col>
 
                   <Col sm={6}>
-                    <input type="text" placeholder="Last Name" />
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      name="last_name"
+                    />
                   </Col>
 
                   <Col sm={6}>
-                    <input type="email" placeholder="Email" />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      required
+                    />
                   </Col>
 
                   <Col sm={6}>
-                    <input type="tel" placeholder="Phone" />
+                    <input
+                      type="tel"
+                      placeholder="Phone"
+                      name="phone"
+                    />
                   </Col>
 
                   <Col xs={12}>
-                    <textarea rows="5" placeholder="Message"></textarea>
+                    <textarea
+                      rows="5"
+                      placeholder="Message"
+                      name="message"
+                      required
+                    ></textarea>
 
                     <button type="submit">Send Message</button>
                   </Col>
