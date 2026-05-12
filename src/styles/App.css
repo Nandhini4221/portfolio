@@ -86,80 +86,96 @@ nav.navbar {
   z-index: 999;
   padding: 18px 0;
   transition: 0.3s ease-in-out;
-  background: transparent;
+  background: transparent !important;
 }
 
 .logo {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
   font-weight: bold;
+  font-size: 30px;
   background: linear-gradient(90deg, #8f8fe7, #c051aa, #35d9db);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 nav.navbar.scrolled {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px 0;
-  backdrop-filter: blur(10px);
+  padding: 12px 0;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-
-.navbar-link {
+.ms-auto .navbar-link {
   color: #fff !important;
   padding: 0 20px;
   font-size: 17px;
-  opacity: 0.7;
-  transition: 0.3s;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
   font-family: cursive;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.navbar-link:hover,
-.navbar-link.active {
+.ms-auto .navbar-link:hover,
+.ms-auto .navbar-link.active {
   opacity: 1;
+  color: #35d9db !important;
+  text-shadow: 0 0 10px #35d9db;
 }
 
 .ms-auto {
   gap: 10px;
+  align-items: center;
 }
 
 .btn-nav {
-  border: 1px solid #2aaadd;
+  border: 1px solid #35d9db;
   padding: 10px 24px;
   background: transparent;
   color: #fff;
   font-weight: 600;
-  transition: 0.3s;
-  margin-top: 10px;
+  transition: 0.3s ease-in-out;
   border-radius: 30px;
   font-family: cursive;
 }
 
 .btn-nav:hover {
-  background: #2aaadd;
+  background: #35d9db;
   color: #000;
+  box-shadow: 0 0 15px #35d9db;
 }
 
-
-
 .navbar-toggler {
-  border: 1px solid rgba(138, 37, 206, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
 }
 
 .navbar-toggler-icon {
   width: 1.5em;
   height: 1.5em;
+
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
 @media (max-width: 768px) {
   .navbar-collapse {
     text-align: center;
+    background: transparent !important;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+    backdrop-filter: none;
+    box-shadow: none;
   }
 
   .navbar-link {
     display: block;
-    padding: 10px 0 !important;
+    padding: 12px 0 !important;
   }
 
   .navbar-text {

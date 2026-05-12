@@ -22,7 +22,7 @@ export const NavBar = () => {
   return (
     <Navbar
       expand="md"
-      bg="dark"
+      // bg="dark"
       variant="dark"
       className={scrolled ? "scrolled navbar" : "navbar"}
     >
