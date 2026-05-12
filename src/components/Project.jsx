@@ -12,8 +12,8 @@ export const Projects = () => {
       desc: "A modern and responsive e-commerce web application featuring product browsing, cart management, and clean UI.",
       image: project1,
       tags: ["React", "Node", "Express", "MongoDB"],
-      github: "https://github.com/Nandhini4221",
-      demo: "hiii",
+      github: "https://github.com/Nandhini4221/ecommerce-frontend",
+      demo: "http://ecommerce-frontend-nandy78.vercel.app/",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export const Projects = () => {
       desc: "A visually stunning personal portfolio website with smooth animations and responsive design.",
       image: project2,
       tags: ["React", "CSS", "Animations"],
-      github: "https://github.com/Nandhini4221",
+      github: "https://github.com/Nandhini4221/portfolio",
       demo: "https://nandysportfolio.vercel.app/",
     },
     {
@@ -30,7 +30,7 @@ export const Projects = () => {
       desc: "A stylish music player web app with modern UI and smooth controls.",
       image: project3,
       tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/Nandhini4221",
+      github: "https://github.com/Nandhini4221/offlinemusic",
       demo: "https://offlinemusicprg.netlify.app",
     },
   ];
